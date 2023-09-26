@@ -1,0 +1,44 @@
+<!--
+    ques 2. You have been assigned a task to implement a theme toggle
+feature for a website. The website currently displays which mode
+it is in (either "Dark Mode" or "Light Mode") and has a toggle
+button. The challenge is to use DOM manipulation to toggle the
+theme between dark and light modes when the button is clicked. -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM manipulation</title>
+</head>
+ <style>
+    .style{
+        border: 2px solid #000000;
+        padding: 20px 10px;
+        background-color: white;
+        color: black;  
+    }
+    .styleTheme{
+        filter: invert(1);   
+    }
+ </style>
+
+<body>
+    <div id="mode" class="style">
+        <h1>This is Light Mode</h1>
+        <button id="btn">Toggle Theme</button>
+    </div>
+    
+    <script>
+
+        const webPage = document.getElementById('mode');
+        let button = document.getElementById('btn');
+         button.addEventListener(onclick = () => {
+             webPage.classList.toggle("styleTheme")
+         })
+    
+    </script>
+</body>
+</html>

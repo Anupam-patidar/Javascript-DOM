@@ -1,0 +1,57 @@
+<!-- 
+    Ques 5. Your task is to implement an image toggle using JS DOM.
+Create a heading to display the current state of the image and a
+toggle button. When the button is clicked, if the image is hidden,
+make it visible, and update the message accordingly. If the
+image is visible, hide it, and update the message accordingly. -->      
+
+<!-- Ans: -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom js</title>
+</head>
+<style>
+    .imageToggle{
+        display: flex;
+        flex-direction: column;
+        align-items: baseline;
+    }
+    .hidden{
+        display:none;
+    }
+    
+</style>
+<body>
+    
+    <div class="imageToggle" >
+        <h1 id="heading">Your image is Visible</h1>
+        <button id="btn">Toggle Image</button>
+        <img src="Assets/pw.jfif" id="img" alt="" width="300px">
+    </div>
+
+    <script>
+        
+        const imageToggle = document.getElementsByClassName('imageToggle');
+        const image =document.getElementById('img');
+        const heading=document.getElementById('heading');
+        let button = document.getElementById('btn');
+        
+        // toggle function
+        button.addEventListener('click' , () => {
+            image.classList.toggle("hidden")
+            if(heading.innerHTML === "Your image is Visible")
+            {
+                heading.innerHTML ="Your image is Hidden";
+            }
+            else{
+                heading.innerHTML ="Your image is Visible"
+            }
+        })
+
+        
+    </script>
+</body>
+</html>

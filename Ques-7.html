@@ -1,0 +1,62 @@
+<!-- 
+  Ques 7. You are tasked to create an input field and a list of items. As the
+user types in the input field, dynamically filter the list to show
+only items that match the input. Making sure the list updates in
+real-time as the user types.
+ -->
+ <!-- Ans: -->
+
+ <!DOCTYPE html>
+<html>
+      
+<head>
+    <title>
+        Creating Search Bar using HTML
+        CSS and Javascript
+    </title>
+
+    <style>
+  
+  </style>
+    
+     
+</head>
+
+<body>
+      
+    <!-- input tag -->
+    <input id="searchbar" onkeyup="search_launguage()" type="text"
+        name="search" placeholder="Search launguage..">
+      
+    <!-- ordered list -->
+    <ol id='list'>
+        <li class="launguage">Html</li>
+        <li class="launguage">Css</li>
+        <li class="launguage">TailwindCss</li>
+        <li class="launguage">Git</li>
+        <li class="launguage">Javascript</li>
+        
+    </ol>
+      
+   
+    <script> 
+   
+function search_launguage() {
+    let input = document.getElementById('searchbar').value
+    input=input.toLowerCase();
+    let li = document.getElementsByClassName('launguage');
+      
+    for (i = 0; i < li.length; i++) { 
+        if (!li[i].innerHTML.toLowerCase().includes(input)) {
+            li[i].style.display="none";
+        }
+        else {
+            li[i].style.display="list-item";                 
+        }
+    }
+}
+
+    </script>
+</body>
+  
+</html>

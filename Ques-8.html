@@ -1,0 +1,61 @@
+<!-- 
+    Ques 8. Your task is to create a webpage that displays the time in hours,
+minutes, and seconds in the center of the screen. Format the
+time to have 2 digits for hours, minutes, and seconds, and use
+the time's values to assign a hex code to the background. The
+timer should update in real-time without any user interaction. For
+Example: If the time is 12:10:50 the background color of the
+webpage will have the hex code “#121050”. -->
+
+<!-- Ans: -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hex Code</title>
+
+</head>
+<style>
+    #timerBox{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border:2px solid white;
+        color: white;
+        border-radius: 10px;
+        width: 100px;
+        height: 50px;
+        margin: 50%;
+        
+    }
+</style>
+<body>
+    
+    <div id="timerBox">
+      <div id="time" > </div>
+    </div>
+
+    <script>
+    
+    let time = new Date()
+    let h = (time.getHours()<10?'0':'') + time.getHours();
+    let m =( time.getMinutes()<10?'0':'') + time.getMinutes();
+    let s =( time.getSeconds()<10?'0':'') + time.getSeconds();
+     let a = (`${h} : ${m} : ${s}`)
+
+      let hex = (`#${h}${m}${s}`)
+  
+  console.log(hex);
+
+    let timeShow = document.getElementById('time');
+    timeShow.innerText = (a);
+    
+    let b = document.body;
+    b.style.backgroundColor= (hex);
+  
+    
+
+    </script>
+</body>
+</html>

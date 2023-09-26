@@ -1,0 +1,65 @@
+<!--
+Ques 4.  You are tasked to create form validation using JS DOM. Ensure
+that the username must be at least 3 characters long, and the
+password must be at least 8 characters long. On form
+submission, display an alert stating "Form Validation successful"
+if the conditions are met, otherwise, show "Form Validation
+failed." Remember, on form submission, the webpage must not
+be reloaded. -->
+<!-- Ans: -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom Js</title>
+    <style>
+        .form{
+            display: flex;
+            flex-direction: column;
+            align-items: baseline;
+            gap: 5px;
+            margin: 200px 300px;
+        }
+    </style>
+</head>
+<body>
+     <div class="">
+        <form action="" class="form">
+        <h1>Sign Up form</h1>
+        
+        <label for="name" >Name :</label>
+        <input type="text" id="name" length="3" value="" placeholder="(Minimum 3 characters)">
+        <label for="email">Email :</label>
+        <input type="text" id="email" placeholder="enter your email">
+        <label for="Password">password :</label>
+        <input type="password" id="Password" length="8" placeholder="(Minimum 8 Characters)">
+        <button id="btn">Submit</button>
+        </form>
+     </div>
+
+
+     <script>
+      let Username = document.getElementById('name');
+       const givenLength = Username.getAttribute('length');
+       let password = document.getElementById('Password');
+       const givenPasswordLen = password.getAttribute('length');
+     let button = document.getElementById("btn");
+     button.addEventListener('click' , () => {
+      
+        let nameLength = Username.value.length;
+        let passwordlength =password.value.length;
+       
+         if(nameLength>=givenLength && passwordlength>= givenPasswordLen){
+            alert("Form Validation Successful");
+         }
+         else{
+            alert('Form Validation Failed')
+         }
+    
+     })
+
+     </script>
+</body>
+</html>
